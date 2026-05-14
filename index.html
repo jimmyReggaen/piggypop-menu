@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#1B4D89">
+<title>PIGGY POP — Menu</title>
+<meta name="description" content="PIGGY POP — Texas Pulled Pork & Poke Bowls. Streetfood na kolesách.">
+<meta property="og:title" content="PIGGY POP — Menu">
+<meta property="og:description" content="Texas Pulled Pork & Poke Bowls. Pork's Not Dead.">
+<meta property="og:image" content="menu-hires.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #1B4D89;
+    --brand-dark: #143A6B;
+    --accent: #F2A03D;
+    --bg: #FAF7F2;
+    --card: #FFFFFF;
+    --text: #1A1A1A;
+    --muted: #6B6B6B;
+    --line: #E8E2D6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 24px 0 40px;
+  }
+  .logo {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(56px, 14vw, 96px);
+    line-height: 0.9;
+    color: var(--brand);
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 4px;
+  }
+  .tagline {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(20px, 4.5vw, 28px);
+    color: var(--brand);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  .intro {
+    font-size: clamp(14px, 3.5vw, 16px);
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .intro strong { color: var(--brand); font-weight: 600; }
+
+  /* MENU SECTIONS */
+  .section { margin-top: 40px; }
+  .section-title {
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: 800;
+    color: var(--brand);
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .item {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .item:active { transform: scale(0.99); }
+  .item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .item-name {
+    font-weight: 700;
+    font-size: clamp(15px, 4vw, 17px);
+    color: var(--text);
+  }
+  .item-price {
+    font-weight: 700;
+    color: var(--brand);
+    font-size: clamp(15px, 4vw, 17px);
+    white-space: nowrap;
+  }
+  .item-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ABOUT BLOCKS */
+  .about {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 24px 22px;
+    margin-top: 32px;
+    border: 1px solid var(--line);
+  }
+  .about h3 {
+    color: var(--brand);
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .about p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .about p strong { color: var(--text); font-weight: 600; }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .footer a {
+    color: var(--brand);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .pdf-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    background: var(--brand);
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .pdf-link:hover { background: var(--brand-dark); }
+
+  /* SUBTLE BG TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(27,77,137,0.04) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(242,160,61,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 20px 16px 60px; }
+    .item { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="logo">PiGGY POP</div>
+    <div class="tagline">PORK'S NOT DEAD</div>
+    <p class="intro">
+      Sme <strong>nový a svieži streetfood koncept</strong>, ktorý spája tradičný americký
+      Texaský Pulled Pork s moderným trendom zdravého stravovania vo forme
+      farebných a chutných Poke Bowls. Štýlový foodtruck — gastronomický zážitok na kolesách.
+    </p>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title">POKE BOWLS</h2>
+    <p class="section-sub">Ryža alebo šalát · vyvážene & čerstvo</p>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Chicken POKE BOWL</span>
+        <span class="item-price">8,50 €</span>
+      </div>
+      <p class="item-desc">Grilované kuracie kúsky, jazmínová ryža, cvikla, mrkva, uhorka, beluga šošovica, guacamole majonéza, sezam, pražená cibuľka</p>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Halloumi / Tofu POKE BOWL</span>
+        <span class="item-price">9,50 €</span>
+      </div>
+      <p class="item-desc">Halloumi alebo tofu, jazmínová ryža, cvikla, mrkva, uhorka, beluga šošovica, guacamole majonéza, sezam, pražená cibuľka</p>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Pulled Pork POKE BOWL</span>
+        <span class="item-price">9,50 €</span>
+      </div>
+      <p class="item-desc">Trhané bravčové mäso, BBQ omáčka, jazmínová ryža, cvikla, mrkva, uhorka, beluga šošovica, guacamole majonéza, sezam, pražená cibuľka</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">SALADS</h2>
+    <p class="section-sub">Čerstvé & chrumkavé</p>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Chicken SALAD</span>
+        <span class="item-price">8,50 €</span>
+      </div>
+      <p class="item-desc">Grilované kuracie kúsky, ľadový šalát, uhorka, rajčina, mrkva, majonéza, sezam, pražená cibuľka</p>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Halloumi / Tofu SALAD</span>
+        <span class="item-price">9,50 €</span>
+      </div>
+      <p class="item-desc">Halloumi alebo tofu, ľadový šalát, uhorka, rajčina, mrkva, majonéza, sezam, pražená cibuľka</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">FRIES SPECIALS</h2>
+    <p class="section-sub">Hriešne dobré</p>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-name">Pork Cheez Fries</span>
+        <span class="item-price">9,50 €</span>
+      </div>
+      <p class="item-desc">Trhané bravčové mäso, BBQ omáčka, hranolky, syr, guacamole majonéza, pražená cibuľka, sezam, červená cibuľa, koriander</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <h3>TEXASKÝ PULLED PORK</h3>
+    <p>Naše <strong>bravčové pliecko alebo stehno</strong> pripravujeme pomaly, v pravom texaskom smokeri na ovocnom dreve. Dlhé údenie pri nízkych teplotách zachováva šťavnatosť a výraznú chuť mäsa. Servírujeme ho s <strong>ryžou alebo chrumkavými hranolkami</strong>, doplnené o jemné majonézy, sezam, koriander, syr, BBQ a praženú cibuľku.</p>
+  </section>
+
+  <section class="about">
+    <h3>POKE BOWL — RYŽA ALEBO ŠALÁT</h3>
+    <p>Pre milovníkov ľahšej a vyváženej stravy ponúkame <strong>Poke Bowl</strong> — z čerstvej zeleniny, ryže alebo šalátu, s možnosťou výberu z <strong>grilovaného kuraťa alebo halloumi syra</strong>. Každý bowl je zostavený tak, aby nielen chutil, ale aj výborne vyzeral.</p>
+  </section>
+
+  <footer class="footer">
+    <p>PIGGY POP · Pork's Not Dead</p>
+    <a class="pdf-link" href="menu.pdf" target="_blank" rel="noopener">Stiahnuť PDF menu</a>
+  </footer>
+
+</div>
+</body>
+</html>
